@@ -1,0 +1,222 @@
+.redux-toastr div:before, .redux-toastr div:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+.redux-toastr .top-right, .redux-toastr .bottom-right {
+    right: 0;
+}
+.redux-toastr .top-left, .redux-toastr .top-right, .redux-toastr .top-center {
+    top: 0;
+}
+.redux-toastr .top-left, .redux-toastr .top-right, .redux-toastr .top-center, .redux-toastr .bottom-left, .redux-toastr .bottom-right, .redux-toastr .bottom-center {
+    width: 350px;
+    position: fixed;
+    z-index: 99999999;
+    padding: 0 10px;
+}
+.redux-toastr *, .redux-toastr *:before, .redux-toastr *:after {
+    box-sizing: border-box;
+}
+.redux-toastr .toastr {
+    min-height: 10px;
+    padding: 11px 10px;
+    opacity: 1;
+    background-color: #fcfcfc;
+
+    /* width: 100%; */
+    max-width: 100%;
+    display: inline-flex;
+    float: right;
+
+    overflow: hidden;
+    margin: 0;
+    margin-top: 10px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+    color: #333;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+}
+.redux-toastr .toastr:focus {
+    outline: 0 !important;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4) !important;
+}
+.redux-toastr .toastr .rrt-left-container {
+    display: none;
+}
+.redux-toastr .toastr.rrt-success {
+    background-color: #60bb71;
+}
+.redux-toastr .toastr.rrt-info, .redux-toastr .toastr.rrt-success, .redux-toastr .toastr.rrt-warning, .redux-toastr .toastr.rrt-error {
+    color: white;
+}
+
+.redux-toastr .toastr div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.redux-toastr .toastr .rrt-middle-container {
+    width: 100%;
+    font-size: 14px;
+}
+
+.redux-toastr .toastr .rrt-progress-container {
+    height: 5px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #00000024;
+    z-index: 999;
+}
+.redux-toastr .toastr .rrt-progressbar {
+    background: rgba(0, 0, 0, 0.13);
+    height: 5px;
+}
+.redux-toastr .toastr.no-close .rrt-right-container { display: none;}
+.redux-toastr .toastr .rrt-right-container {
+    margin-left: 10px;
+}
+.redux-toastr .toastr .close-toastr {
+    cursor: pointer;
+}
+.redux-toastr .toastr .close-toastr span {
+    font-size: 16px;
+}
+.redux-toastr .mToast-success {
+    background: #60bb71 !important;
+}
+.redux-toastr .mToast-warning {
+    background: #ecc249 !important;
+}
+.redux-toastr .mToast-error {
+    background: #ef5e5e !important;
+}
+.redux-toastr .mToast-dark {
+    background: #696969 !important;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.animated.bounceIn {
+    animation-duration: 0.7s;
+}
+.animated.bounceOut {
+    animation-duration: 0.5s;
+}
+.animated.bounceIn {
+    animation-name: bounceIn;
+}
+.animated.bounceOut {
+    animation-name: bounceOut;
+}
+.animated.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 0.7s;
+}
+.animated.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 0.3s;
+}
+.animated.bounceInDown {
+    animation-name: bounceInDown;
+}
+.animated.bounceOutUp {
+    animation-name: bounceOutUp;
+}
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+   }
+    0% {
+        opacity: 0;
+        transform: perspective(1px) scale3d(0.3, 0.3, 0.3);
+   }
+    20% {
+        transform: perspective(1px) scale3d(1.1, 1.1, 1.1);
+   }
+    40% {
+        transform: perspective(1px) scale3d(0.9, 0.9, 0.9);
+   }
+    60% {
+        opacity: 1;
+        transform: perspective(1px) scale3d(1.03, 1.03, 1.03);
+   }
+    80% {
+        transform: perspective(1px) scale3d(0.97, 0.97, 0.97);
+   }
+    to {
+        opacity: 1;
+        transform: perspective(1px) scale3d(1, 1, 1);
+   }
+}
+@keyframes bounceOut {
+    20% {
+        transform: scale3d(0.9, 0.9, 0.9);
+   }
+    50%, 55% {
+        opacity: 1;
+        transform: scale3d(1.1, 1.1, 1.1);
+   }
+    to {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+   }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+   }
+    to {
+        opacity: 1;
+   }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+   }
+    to {
+        opacity: 0;
+   }
+}
+@keyframes bounceInDown {
+    from, 60%, 75%, 90%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+   }
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -3000px, 0);
+   }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 25px, 0);
+   }
+    75% {
+        transform: translate3d(0, -10px, 0);
+   }
+    90% {
+        transform: translate3d(0, 5px, 0);
+   }
+    to {
+        -webkit-transform: none;
+        transform: none;
+   }
+}
+@keyframes bounceOutUp {
+    20% {
+        transform: translate3d(0, -10px, 0);
+   }
+    40%, 45% {
+        opacity: 1;
+        transform: translate3d(0, 20px, 0);
+   }
+    to {
+        opacity: 0;
+        transform: translate3d(0, -2000px, 0);
+   }
+}

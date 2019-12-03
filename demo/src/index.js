@@ -1,15 +1,22 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
+import { Provider } from 'react-redux'
 
-import Example from '../../src'
+import MToastr, {mToast} from '../../src'
+import store from '../store'
 
-class Demo extends Component {
+class Test extends Component {
   render() {
-    return <div>
-      <h1>react-redux-toasts Demo</h1>
-      <Example/>
-    </div>
+    return (
+      <Provider store={store}>
+        <MToastr />
+        <span onClick={() => {mToast.success({text:"Hello React !"})}} >Show success !</span><br/>
+        <span onClick={() => {mToast.error({text:"Hello React !"})}} >Show error !</span><br/>
+        <span onClick={() => {mToast.warning({text:"Hello React !"})}} >Show warning !</span><br/>
+        <span onClick={() => {mToast.dark({text:"Hello React !"})}} >Show default !</span>
+      </Provider>
+    )
   }
 }
 
-render(<Demo/>, document.querySelector('#demo'))
+render(<Test/>, document.querySelector('#demo'))
