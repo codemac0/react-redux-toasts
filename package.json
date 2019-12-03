@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-toast",
+  "name": "react-redux-toasts",
   "version": "1.0.0",
-  "description": "react-redux-toast React component",
+  "description": "react-redux-toasts React component",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -10,10 +10,10 @@
     "lib",
     "umd"
   ],
-  "homepage": "https://github.com/djfr101/react-redux-toast.git#readme",
+  "homepage": "https://github.com/djfr101/react-redux-toasts.git#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/djfr101/react-redux-toast.git"
+    "url": "git+https://github.com/djfr101/react-redux-toasts.git"
   },
   "scripts": {
     "build": "nwb build-react-component --copy-files",

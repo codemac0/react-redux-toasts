@@ -1,16 +1,16 @@
-# react-redux-toast
+# react-redux-toasts
 
 [![npm package][npm-badge]][npm]
 
-`react-redux-toast` is a React toast implemented with [react-redux-toastr](https://github.com/diegoddox/react-redux-toastr).
+`react-redux-toasts` is a React toast implemented with [react-redux-toastr](https://github.com/diegoddox/react-redux-toastr).
 
 # Installation
 
-`npm install --save react-redux-toast`
+`npm install --save react-redux-toasts`
 
 ```javascript
 import {createStore, combineReducers} from 'redux'
-import {toastReducer} from 'react-redux-toast'
+import {toastReducer} from 'react-redux-toasts'
 const reducers = {
   toastr: toastReducer
   // ... other reducers ...
@@ -21,7 +21,7 @@ const store = createStore(reducer)
 
 ```javascript
 import {Provider}  from 'react-redux'
-import MToastr from 'react-redux-toast'
+import MToastr from 'react-redux-toasts'
 
 <Provider store={store}>
     ... other things
@@ -31,7 +31,7 @@ import MToastr from 'react-redux-toast'
 
 ```javascript
 import React, {Component}  from 'react'
-import {mToast} from 'react-redux-toast'
+import {mToast} from 'react-redux-toasts'
 
 export class YourComponent extends Component {
   render() {
@@ -46,8 +46,8 @@ export class YourComponent extends Component {
 
 # Run a local demo
 ```
-git clone https://github.com/djfr101/react-redux-toast.git
-cd react-redux-toast
+git clone https://github.com/djfr101/react-redux-toasts.git
+cd react-redux-toasts
 npm install
 npm start
 ```
